@@ -33,5 +33,5 @@ public static void build(int[] arr){
         }
         System.out.println();
     }
-    }
+}
 }

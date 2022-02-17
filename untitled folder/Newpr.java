@@ -14,6 +14,7 @@ public class Newpr {
         for(int i=0;i<m;i++){
             arr2[i]=sc.nextInt();
         }
+        sc.close();
         int a=Math.max(n,m);
         int[] arr3=new int[a+1];
         int carry=0;
