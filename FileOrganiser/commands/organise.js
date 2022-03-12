@@ -41,3 +41,4 @@ for (let i = 0; i < allFiles.length; i++){
 
 //(paste your own path) let srcPath="/Users/abhishekgoel/Desktop/Desktop/AbhishekGoel/FJP5/Node/fileOrganizer/downloads"
 organize(srcPath);
+//adskjdaksjcskjbvcksjlv
