@@ -23,3 +23,21 @@ function organise(srcPath){
     else console.log("folder already exits");
 
 }
+  //3. scan the entire srcPath(doenloads folder in this case)
+
+  //Reads the contents of the directory.-> basically reads the names of files present in directory
+  let allFiles = fs.readdirSync(srcPath);
+  console.log(allFiles);
+
+//4.trvaerse over all the files and classify them on the basis of their extension (.pdf , .mp3)
+for (let i = 0; i < allFiles.length; i++){
+    // let ext = allFiles[i].split(".")[1];
+    let ext = path.extname(allFiles[i]);
+    console.log(ext);
+}
+
+
+
+
+//(paste your own path) let srcPath="/Users/abhishekgoel/Desktop/Desktop/AbhishekGoel/FJP5/Node/fileOrganizer/downloads"
+organize(srcPath);
