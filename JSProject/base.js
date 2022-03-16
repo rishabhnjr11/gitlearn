@@ -1,10 +1,8 @@
 getname();
-console.log(x);
-
+console.log(x)
+console.log(getname)
 var x=7;
 
 function getname(){
     console.log("Rishabh Verma")
 }
-console.log(getname)
-console.log('hello')

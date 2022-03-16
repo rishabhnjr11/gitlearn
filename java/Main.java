@@ -5,14 +5,15 @@ import java.util.*;
 public class Main{
 
 public static void main(String[] args) throws Exception {
-    Scanner sc=new Scanner(System.in);
-    System.out.print("Enter array size");
-    int n=sc.nextInt();
-    int[] arr= new int[n];
-    for(int i=0;i<n;i++){
-        arr[i]=sc.nextInt();
+    try (Scanner sc = new Scanner(System.in)) {
+        System.out.print("Enter array size");
+        int n=sc.nextInt();
+        int[] arr= new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        build(arr);
     }
-    build(arr);
  }
 
 public static void build(int[] arr){
