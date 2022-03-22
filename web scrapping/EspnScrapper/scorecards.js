@@ -4,7 +4,7 @@ const cheerio = require("cheerio");
 function getInfoFromScorecard(url){
     // we have url of a scorecard and we want a html of the scorecard 
     // console.log("from scorecards.js",url);
-    request(irl,cb);
+    request(url,cb);
 }
 function cb(err,res,body){
     if(err){
@@ -27,12 +27,12 @@ function getMatchDetails(html){
     // console.log(descArr);
     let dateOfMatch = decArr[2];
     let venueOfMatch = decArr[1];
-    console.log(dateOfMatch);
-    console.log(venueOfMatch);
+    console.log("Date of the Match : "+dateOfMatch);
+    console.log("Venue of the match : " +venueOfMatch);
     //3 get result
     let matchResult =selecTool(
         ".match-info.match-info-MATCH.match-info-MATCH-half-width>.status-text");
-        console.log(matchResult.text());
+        console.log("Result : "+matchResult.text());
 
     //4 get team names
 
