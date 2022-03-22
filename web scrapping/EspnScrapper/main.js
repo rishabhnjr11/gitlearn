@@ -2,7 +2,7 @@ let url ="https://www.espncricinfo.com/series/ipl-2020-21-1210595"
 
 const request = require("request");
 const cheerio = require("cheerio");
-
+const allMatchobj = require("allMatch");
 request(url,cb);
 
 function cb(err,res,body){
