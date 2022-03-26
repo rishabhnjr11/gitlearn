@@ -1,5 +1,7 @@
 const request = require("request");
 const cheerio = require("cheerio");
+const fs= require("fs");
+const xlsx = require("xlsx");
 
 function getInfoFromScorecard(url){
     // we have url of a scorecard and we want a html of the scorecard 
@@ -37,6 +39,35 @@ function getMatchDetails(html){
     //4 get team names
 
 }
+function processInformation(dateOfMatch,venueOfMatch,matchResult,team1,team2,playerName,runs,balls,numberOf4,numberOf6,sr){
+    let teamNamePath = path.join(__dirname,"IPL",team1);
+    if(!fs.existsSync(teamNamePath)){
+        fs.mkdirSync(teamNamePath);
+    }
+}
+let playerPath=path.join(teamNamePath, playerName+".xlsx");
+let content=excelReader(playerPath,playerName);
+
+function excelReader(playerPath,playerName){
+    if(!fs.existsSync(playerPath)){
+        return[];
+    }
+}
+
+let playerObj = {dateOfMatch,venueOfMatch,matchResult,team1,team2,playerName,runs,balls,numberOf4,numberOf6,sr};
+content.push(playerObj);
+excelWriter(playerPath,content,playerName)
+
+function excelWriter(playerPath, jsObject, sheetName){
+    //create a new workbook
+    let newWorkbook = xlsx.utils.book_new();
+    //convert an array of jsobject into a worksheet
+    let newWorksheet = xlsx.utils.json_to_sheet(jsObject);
+    //it appends the workshhet to a workbook
+    xlsx.utils.book_append_sheet(newWorkbook,newWorksheet,sheetName);
+    xlsx.writeFile(newWorkbook, playerPath);
+}
+
 //visit every scorecard and get the info
 module.exports = {
     gifs:getInfoFromScorecard
